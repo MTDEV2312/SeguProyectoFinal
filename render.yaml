@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: portal-corporativo-simulado
+    env: docker
+    plan: free
+    buildCommand: ""  # Render construirá automáticamente usando el Dockerfile
+    startCommand: ""  # Usar el CMD del Dockerfile
+    envVars:
+      - key: PUBLIC_SUPABASE_URL
+        value: ""  # Se debe configurar en el dashboard de Render
+      - key: SUPABASE_ANON_KEY
+        value: ""  # Se debe configurar en el dashboard de Render
+      - key: APP_SECRET_KEY
+        generateValue: true  # Render generará una clave segura automáticamente
+      - key: ENVIRONMENT
+        value: production
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    healthCheckPath: /
+    numInstances: 1
+    regions:
+      - oregon
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeploy: true

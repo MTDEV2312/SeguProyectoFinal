@@ -1,0 +1,9 @@
+.env
+DEPLOYMENT_RENDER.md
+config.dev
+docker-compose.yml
+RENDER_READY.md
+start.bat
+start.sh
+supabase_setup.md
+usuarios_ejemplo.md
