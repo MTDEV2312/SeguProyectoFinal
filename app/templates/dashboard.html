@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Portal Corporativo{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/dashboard">
+            <img src="{{ url_for('static', path='logo.svg') }}" alt="Logo" height="40" class="me-2" style="filter: brightness(0) invert(1);">
+            <div>
+                <i class="fas fa-building"></i> TechCorp Solutions
+                <small class="d-block opacity-75" style="font-size: 0.7em;">Portal Interno</small>
+            </div>
+        </a>
+        
+        <div class="navbar-nav ms-auto">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                    <i class="fas fa-user-circle"></i> {{ user.full_name }}
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-user-edit"></i> Perfil</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Configuración</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    {% if user.role == 'admin' %}
+                    <li><a class="dropdown-item" href="/admin"><i class="fas fa-tools"></i> Panel Admin</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    {% endif %}
+                    <li><a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <!-- Información del Usuario -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5><i class="fas fa-user-circle"></i> Bienvenido, {{ user.full_name }}</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Email:</strong> {{ user.email }}</p>
+                            <p><strong>Departamento:</strong> {{ user.department }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Rol:</strong> 
+                                {% if user.role == 'admin' %}
+                                    <span class="badge bg-danger"><i class="fas fa-crown"></i> Administrador</span>
+                                {% else %}
+                                    <span class="badge bg-info"><i class="fas fa-user"></i> Usuario</span>
+                                {% endif %}
+                            </p>
+                            <p><strong>Estado:</strong> <span class="badge bg-success">Activo</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h6><i class="fas fa-clock"></i> Acceso Rápido</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-primary btn-sm" onclick="alert('Función simulada')">
+                            <i class="fas fa-calendar"></i> Calendario
+                        </button>
+                        <button class="btn btn-outline-success btn-sm" onclick="alert('Función simulada')">
+                            <i class="fas fa-envelope"></i> Email Interno
+                        </button>
+                        <button class="btn btn-outline-warning btn-sm" onclick="alert('Función simulada')">
+                            <i class="fas fa-phone"></i> Directorio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Noticias de la Empresa -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5><i class="fas fa-newspaper"></i> Noticias de la Empresa</h5>
+                </div>
+                <div class="card-body">
+                    {% for news_item in news %}
+                    <div class="mb-3 {% if not loop.last %}border-bottom pb-3{% endif %}">
+                        <h6 class="text-primary">{{ news_item.title }}</h6>
+                        <small class="text-muted">
+                            <i class="fas fa-calendar-alt"></i> {{ news_item.date }}
+                        </small>
+                        <p class="mt-2 mb-0">{{ news_item.content }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-warning text-dark">
+                    <h6><i class="fas fa-exclamation-triangle"></i> Avisos Importantes</h6>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <small>
+                            <strong>Mantenimiento programado:</strong>
+                            <br>El sistema estará en mantenimiento el próximo domingo de 2:00 AM a 6:00 AM.
+                        </small>
+                    </div>
+                    <div class="alert alert-info">
+                        <small>
+                            <strong>Nueva política:</strong>
+                            <br>Actualización obligatoria de contraseñas antes del 31 de enero.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Documentos y Recursos -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h5><i class="fas fa-folder-open"></i> Documentos y Recursos</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th><i class="fas fa-file"></i> Documento</th>
+                                    <th><i class="fas fa-tag"></i> Tipo</th>
+                                    <th><i class="fas fa-weight-hanging"></i> Tamaño</th>
+                                    <th><i class="fas fa-cogs"></i> Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for doc in documents %}
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-file-pdf text-danger"></i> {{ doc.name }}
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-light text-dark">{{ doc.type }}</span>
+                                    </td>
+                                    <td>{{ doc.size }}</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" onclick="alert('Descarga simulada: {{ doc.name }}')">
+                                            <i class="fas fa-download"></i> Descargar
+                                        </button>
+                                        <button class="btn btn-info btn-sm" onclick="alert('Vista previa simulada')">
+                                            <i class="fas fa-eye"></i> Ver
+                                        </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Simulación de funcionalidades
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mostrar mensaje de bienvenida
+        const userName = '{{ user.full_name }}';
+        console.log(`Bienvenido al portal corporativo, ${userName}`);
+        
+        // Simular carga de datos
+        setTimeout(() => {
+            console.log('Datos del usuario cargados exitosamente (simulado)');
+        }, 1000);
+    });
+</script>
+{% endblock %}

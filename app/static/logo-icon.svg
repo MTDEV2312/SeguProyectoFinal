@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoCircleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <dropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Círculo de fondo con sombra -->
+  <circle cx="32" cy="32" r="30" fill="url(#logoCircleGradient)" filter="url(#shadow)"/>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="white" stroke-width="2" opacity="0.2"/>
+  
+  <!-- Edificio corporativo principal -->
+  <g transform="translate(16, 12)">
+    <!-- Base del edificio -->
+    <rect x="0" y="20" width="32" height="4" fill="white" opacity="0.3" rx="1"/>
+    
+    <!-- Torres del edificio en perspectiva -->
+    <rect x="2" y="16" width="6" height="20" fill="white" opacity="0.95" rx="1"/>
+    <rect x="6" y="12" width="6" height="24" fill="white" rx="1"/>
+    <rect x="10" y="8" width="6" height="28" fill="white" opacity="0.95" rx="1"/>
+    <rect x="14" y="10" width="6" height="26" fill="white" opacity="0.9" rx="1"/>
+    <rect x="18" y="14" width="6" height="22" fill="white" opacity="0.85" rx="1"/>
+    <rect x="22" y="16" width="6" height="20" fill="white" opacity="0.8" rx="1"/>
+    
+    <!-- Ventanas detalladas -->
+    <!-- Torre 1 -->
+    <rect x="3" y="18" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="3" y="21" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="3" y="24" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="3" y="27" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="3" y="30" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="5.5" y="18" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="5.5" y="21" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="5.5" y="24" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="5.5" y="27" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="5.5" y="30" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    
+    <!-- Torre 2 (principal) -->
+    <rect x="7" y="14" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="7" y="17" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="7" y="20" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="7" y="23" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="7" y="26" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="7" y="29" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="7" y="32" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="9.5" y="14" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="9.5" y="17" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="9.5" y="20" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="9.5" y="23" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="9.5" y="26" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="9.5" y="29" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="9.5" y="32" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    
+    <!-- Torre 3 (más alta) -->
+    <rect x="11" y="10" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="11" y="13" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="11" y="16" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="11" y="19" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="11" y="22" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="11" y="25" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="11" y="28" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="11" y="31" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="13.5" y="10" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="13.5" y="13" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="13.5" y="16" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="13.5" y="19" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="13.5" y="22" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="13.5" y="25" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="13.5" y="28" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    <rect x="13.5" y="31" width="1.5" height="1.5" fill="#1e3a8a" rx="0.2"/>
+    
+    <!-- Entrada principal con luz -->
+    <rect x="12" y="32" width="4" height="4" fill="#fbbf24" rx="2"/>
+    <rect x="13" y="33" width="2" height="3" fill="#f59e0b" rx="1"/>
+    <circle cx="14" cy="34" r="0.5" fill="#fef3c7"/>
+  </g>
+  
+  <!-- Indicador de simulación (más prominente) -->
+  <circle cx="52" cy="12" r="8" fill="#ef4444" stroke="white" stroke-width="2"/>
+  <text x="52" y="16" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">
+    SIM
+  </text>
+  
+  <!-- Texto corporativo en la parte inferior -->
+  <text x="32" y="55" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle" opacity="0.9">
+    PORTAL CORPORATIVO
+  </text>
+</svg>

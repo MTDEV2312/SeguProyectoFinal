@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Registro - Portal Corporativo{% endblock %}
+
+{% block content %}
+<div class="corporate-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="d-flex align-items-center mb-2">
+                    <img src="{{ url_for('static', path='logo.svg') }}" alt="Logo Corporativo" class="logo-main me-3">
+                    <div>
+                        <h1 class="mb-1"><i class="fas fa-building me-2"></i>TechCorp Solutions</h1>
+                        <p class="mb-0">Registro de Nuevo Empleado</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-end">
+                <img src="{{ url_for('static', path='logo-icon.svg') }}" alt="Icono Corporativo" class="logo-icon">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="login-container">
+        <div class="row justify-content-center w-100">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white text-center">
+                        <h4><i class="fas fa-user-plus"></i> Registro de Empleado</h4>
+                    </div>
+                    <div class="card-body">
+                        {% if error %}
+                        <div class="alert alert-danger">
+                            <i class="fas fa-exclamation-circle"></i> {{ error }}
+                        </div>
+                        {% endif %}
+                        
+                        <form method="POST" action="/register">
+                            <div class="mb-3">
+                                <label for="full_name" class="form-label">
+                                    <i class="fas fa-user"></i> Nombre Completo
+                                </label>
+                                <input type="text" class="form-control" id="full_name" name="full_name" required 
+                                       placeholder="Juan Pérez García">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope"></i> Email Corporativo
+                                </label>
+                                <input type="email" class="form-control" id="email" name="email" required 
+                                       placeholder="juan.perez@techcorp.com">
+                                <div class="form-text">Usa tu email corporativo oficial</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="password" class="form-label">
+                                    <i class="fas fa-lock"></i> Contraseña
+                                </label>
+                                <input type="password" class="form-control" id="password" name="password" required 
+                                       minlength="6">
+                                <div class="form-text">Mínimo 6 caracteres</div>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Acepto los términos y condiciones de la empresa (SIMULADO)
+                                </label>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success btn-lg">
+                                    <i class="fas fa-user-check"></i> Crear Cuenta
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <hr>
+                        
+                        <div class="text-center">
+                            <p class="mb-0">
+                                ¿Ya tienes una cuenta? 
+                                <a href="/login" class="text-decoration-none">
+                                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Información de seguridad simulada -->
+                <div class="alert alert-warning mt-4">
+                    <strong><i class="fas fa-shield-alt"></i> Política de Seguridad:</strong>
+                    <br>• Las contraseñas deben cambiarse cada 90 días
+                    <br>• Nunca compartas tus credenciales
+                    <br>• Reporta cualquier actividad sospechosa a IT
+                    <br><small class="text-muted">(Todo simulado para propósitos educativos)</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
