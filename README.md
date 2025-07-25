@@ -254,7 +254,4 @@ Para preguntas educativas o problemas técnicos:
 - Crear un issue en el repositorio
 - Contactar al mantenedor del proyecto
 
----
 
-**🎓 Recuerda: El conocimiento en ciberseguridad debe usarse para proteger, no para atacar.**
-# SeguProyectoFinal
